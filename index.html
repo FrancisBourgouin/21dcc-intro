@@ -9,7 +9,7 @@
 		<link rel="stylesheet" href="css/reset.css">
 		<link rel="stylesheet" href="css/reveal.css">
 		<link rel="stylesheet" href="css/theme/black.css">
-
+		<link rel="stylesheet" href="css/custom.css">
 		<!-- Theme used for syntax highlighting of code -->
 		<link rel="stylesheet" href="lib/css/monokai.css">
 
@@ -25,8 +25,127 @@
 	<body>
 		<div class="reveal">
 			<div class="slides">
-				<section>Slide 1</section>
-				<section>Slide 2</section>
+				<section>
+					<h2>21 Day Coding Challenge</h2>
+					<h3>Intro presentation</h3>
+				</section>
+
+				<section>
+					<h3>🎉 Congratulations for attending this intro ! 🎉</h3>
+				</section>
+
+				<section>
+					<h3>Today's order of lecture</h3>
+					<ul>
+						<li class="fragment">Some context to help the learning experience</li>
+						<li class="fragment">What is programming ?</li>
+						<li class="fragment">Approach a problem programaticaly.</li>
+						<li class="fragment">What are variables ?</li>
+						<li class="fragment">When and how to use loops.</li>
+						<li class="fragment">Importance of conditionals.</li>
+						<li class="fragment">What about functions ?</li>
+					</ul>
+				</section>
+
+				<section>
+					<section>
+						Having a situation to help us put in context what we are about to do always help, so we'll talk about...
+					</section>
+					<section>
+						<h1>🌳🌲🌴</h1>
+						<h1>Trees !</h1>
+						<h1>🌴🌲🌳</h1>
+					</section>
+				</section>
+
+				<section>
+					<section>
+						<h3>Mise en situation</h3>
+					</section>
+					<section>
+						Let's say we have a friend that needs to account for every tree in Montréal, and they are describing each tree using some cut & paste-fu...
+					</section>
+					<section>
+						<ul>
+							<li>1 oak tree that measures 10.6 meters, 45 years old. The tree looks like 🌳 and is indigenous to Canada.</li>
+							<li>1 pine tree that measures 12.6 meters, 65 years old. The tree looks like 🌲 and is indigenous to Canada.</li>
+							<li>1 palm tree that measures 5.6 meters, 25 years old. The tree looks like 🌴 and is not indigenous to Canada.</li>
+							<li>...</li>
+						</ul>
+					</section>
+					<section>
+						Pretty boring no ?
+					</section>
+					<section>
+						Since all entries are and will look the same, it's possible for us to approach the problem in a programatical way.
+						Coding will be pretty helpful for us here.
+					</section>
+				</section>
+
+				<section>
+					<section>
+						<h3>What is coding ?</h3>
+					</section>
+					<section>
+						Coding is all about giving the simplest set of instructions to a computer so that a language, like JavaScript that we will use today, will be able to interpret and execute.
+					</section>
+					<section>
+						So how do we use coding to help us with the current problem ?
+					</section>
+				</section>
+
+
+				<section class="isolate_variables">
+					<section>
+						<h3>Analysing the situation</h3>
+					</section>
+					<section>
+						We know that every entry will look the same, let's isolate what will be different.
+					</section>
+					<section>
+						Let's find what's different :
+						<ul>
+							<li>1 oak tree that measures 10.6 meters, 45 years old. The tree looks like 🌳 and is indigenous to Canada.</li>
+							<li>1 pine tree that measures 12.6 meters, 65 years old. The tree looks like 🌲 and is indigenous to Canada.</li>
+							<li>1 palm tree that measures 5.6 meters, 25 years old. The tree looks like 🌴 and is not indigenous to Canada.</li>
+						</ul>
+					</section>
+					<section>
+						Highlighted, we see the isolated elements that are different :
+						<ul>
+							<li><span class="inverted">1 oak</span> tree that measures <span class="inverted">10.6</span> meters, <span class="inverted">45</span> years old. The tree looks like <span class="inverted">🌳</span> and <span class="inverted">is</span> indigenous to Canada.</li>
+							<li><span class="inverted">1 pine</span> tree that measures <span class="inverted">12.6</span> meters, <span class="inverted">65</span> years old. The tree looks like <span class="inverted">🌲</span> and <span class="inverted">is</span> indigenous to Canada.</li>
+							<li><span class="inverted">1 palm</span> tree that measures <span class="inverted">5.6</span> meters, <span class="inverted">25</span> years old. The tree looks like <span class="inverted">🌴</span> and <span class="inverted">is not</span> indigenous to Canada.</li>
+						</ul>
+					</section>
+					<section>
+						Let's look at what this line contains : 
+						<p><span class="inverted">1 oak tree</span> that measures <span class="inverted">10.6</span> meters, <span class="inverted">45</span> years old. The tree looks like <span class="inverted">🌳</span> and <span class="inverted">is</span> indigenous to Canada.</p>
+						<ul>
+							<li>the number (integer) 1, representing the quantity during the observation</li>
+							<li>the name (string) oak, representing the type of tree</li>
+							<li>the number (float) 10.6, representing the height of the tree in meters</li>
+							<li>the number (integer) 45, representing the age of the tree</li>
+							<li>the emoji (string) 🌳, representing the look of the tree</li>
+							<li>the fact (boolean) is, representing the fact that it is indigenous to Canada.</li>
+						</ul>
+					</section>
+				</section>
+				
+				<section>
+					<section>
+						<h3>Wait... What are those float, integers, strings and booleans terms ?!</h3>
+					</section>
+					<section>
+						In JavaScript we have data types, like float int bool string and others
+						its important because they have different kind of actions that can be taken on them
+					</section>
+					<section>
+						Let's look at how one entry would look like in JavaScript
+						<iframe height="400px" width="100%" src="https://repl.it/@FrancisBourgoui/Initial-string?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
+						We can use quotes ('word'), double quotes ("word") or backticks (`word`)to specify that what is coming is a string
+					</section>
+				</section>
 			</div>
 		</div>
 

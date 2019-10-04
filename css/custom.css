@@ -1,0 +1,34 @@
+/*
+* List CSS
+*/
+
+section ul li {
+    font-size:0.5em;
+}
+
+.inverted {
+    filter:invert(1);
+    background:black;
+}
+.isolate_variables ul{
+    display:flex;
+    flex-direction:column;
+    padding:0;
+    margin:0;
+}
+.isolate_variables ul li{
+    list-style-type: none;
+    padding:0;
+    margin:0;
+}
+/*
+* 
+*/
+
+/*
+* 
+*/
+
+/*
+* 
+*/
