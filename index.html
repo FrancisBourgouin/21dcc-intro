@@ -87,7 +87,16 @@
 						<h3>What is coding ?</h3>
 					</section>
 					<section>
-						Coding is all about giving the simplest set of instructions to a computer so that a language, like JavaScript that we will use today, will be able to interpret and execute.
+						Coding is all about giving the simplest set of instructions to a computer so that a language will be able to interpret and execute.
+					</section>
+					<section>
+						What is JavaScript ?
+					</section>
+					<section>
+						Small history slide
+					</section>
+					<section>
+						what does it looks like
 					</section>
 					<section>
 						So how do we use coding to help us with the current problem ?
@@ -134,7 +143,7 @@
 				
 				<section>
 					<section>
-						<h3>Wait... What are those float, integers, strings and booleans terms ?!</h3>
+						<h3>Wait... What are those float, integers, strings and booleans ?!</h3>
 					</section>
 					<section>
 						In JavaScript we have data types, like float int bool string and others
@@ -144,6 +153,151 @@
 						Let's look at how one entry would look like in JavaScript
 						<iframe height="400px" width="100%" src="https://repl.it/@FrancisBourgoui/Initial-string?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
 						We can use quotes ('word'), double quotes ("word") or backticks (`word`)to specify that what is coming is a string
+					</section>
+					<section>
+						Interestingly we can store that string so we can manipulate it, multiply it, or use it later
+					</section>
+					<section>
+						<pre><code>let specificEntry = `1 oak tree that measures 10.6 meters, 45 years old. The tree looks like 🌳 and is indigenous to Canada.`</code></pre> 
+						We use the keyword let to declare a variable
+						we name it, specificEntry
+						using the quality sign, we assign the string to it
+					</section>
+					<section>
+						repl with var
+						multiple console.log
+					</section>
+				</section>
+
+				<section>
+					<section>
+						<h3>Let's create some variables !</h3>
+					</section>
+					<section>
+						based on what we had in the entry
+						<ul>
+							<li>the number (integer) 1, representing the quantity during the observation</li>
+							<li>the name (string) oak, representing the type of tree</li>
+							<li>the number (float) 10.6, representing the height of the tree in meters</li>
+							<li>the number (integer) 45, representing the age of the tree</li>
+							<li>the emoji (string) 🌳, representing the look of the tree</li>
+							<li>the fact (boolean) is, representing the fact that it is indigenous to Canada.</li>
+						</ul>
+					</section>
+					<section>
+						based on what we had in the entry 2
+						<ul>
+							<li>let treeAmount = 1, representing the quantity during the observation</li>
+							<li>let treeType = `oak`, representing the type of tree</li>
+							<li>let treeHeight = 10.6, representing the height of the tree in meters</li>
+							<li>let treeAge = 45, representing the age of the tree</li>
+							<li>let treeEmoji = `🌳`, representing the look of the tree</li>
+							<li>the treeIsIndigenous = true, representing the fact that it is indigenous to Canada.</li>
+						</ul>
+					</section>
+					<section>
+						So now that we have a string variable for the entry and multiple variables for our changing elements, can we merge thoses ?
+						sure !
+					</section>
+				</section>
+
+				<section>
+					<section>
+						<h3>Variable manipulation</h3>
+					</section>
+					<section>
+						increment - num
+					</section>
+					<section>
+						invert - bool
+					</section>
+					<section>
+						concat / add - string
+					</section>
+					<section>
+						template litterals - string
+					</section>
+					<section>
+						why did we make our entry variable bigger than before ?
+					</section>
+				</section>
+
+				<section>
+					<section>
+						<h3>reusability</h3>
+					</section>
+					<section>
+						use entry var with two sets of data
+					</section>
+					<section>
+						repl
+					</section>
+					<section>
+						lots of variables
+					</section>
+				</section>
+
+				<section>
+					<section>
+						<h3>how to wrangle multiple variables - Part 1</h3>
+					</section>
+					<section>
+						they are representing properties on a specific element (tree here)
+					</section>
+					<section>
+						objects !
+					</section>
+					<section>
+						what
+					</section>
+					<section>
+						list of vars
+						to object
+					</section>
+					<section>
+						how to access
+					</section>
+					<section>
+						repl
+					</section>
+					<section>
+						still have a problem with all the entries
+					</section>
+				</section>
+				
+				<section>
+					<section>
+						<h3>how to wrangle multiple variables - part 2</h3>
+					</section>
+					<section>
+						each object is now representing a specific element
+					</section>
+					<section>
+						could we make a list of those elements ?
+					</section>
+					<section>
+						arrays !
+					</section>
+					<section>
+						what
+					</section>
+					<section>
+						list of objects to array of trees
+					</section>
+					<section>
+						how to access
+					</section>
+					<section>
+						repl
+					</section>
+					<section>
+						now data is cool, but changing the numbers manual, boring
+					</section>
+				</section>
+
+				<section>
+					<section>
+						<h3>automate your life with loops !</h3>
 					</section>
 				</section>
 			</div>
@@ -160,7 +314,9 @@
 					{ src: 'plugin/markdown/marked.js' },
 					{ src: 'plugin/markdown/markdown.js' },
 					{ src: 'plugin/notes/notes.js', async: true },
-					{ src: 'plugin/highlight/highlight.js', async: true }
+					{ src: 'plugin/highlight/highlight.js', async: true },
+					{ src: 'socket.io/socket.io.js', async: true },
+					{ src: 'plugin/notes-server/client.js', async: true }
 				]
 			});
 		</script>
