@@ -21,6 +21,19 @@ section ul li {
     padding:0;
     margin:0;
 }
+.inline-code{
+    display:flex;
+    align-items: center;
+}
+.reveal .inline-code pre{
+    display: inline-block;
+    width: auto;
+    margin: 0;
+    font-size: 1em;
+}
+.reveal .inline-code pre code{
+    background:transparent;
+}
 /*
 * 
 */
