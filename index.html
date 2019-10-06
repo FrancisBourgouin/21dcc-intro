@@ -27,11 +27,7 @@
 			<div class="slides">
 				<section>
 					<h2>21 Day Coding Challenge</h2>
-					<h3>Intro presentation</h3>
-				</section>
-
-				<section>
-					<h3>🎉 Congratulations for attending this intro ! 🎉</h3>
+					<h3>Intro workshop</h3>
 				</section>
 
 				<section>
@@ -60,9 +56,9 @@
 					
 				</section>
 
-				<section>
+				<section class="situation">
 					<section>
-						<h3>Mise en situation</h3>
+						<h3>The situation</h3>
 					</section>
 					<section>
 						Let's say we have a friend that needs to account for every tree in Montréal, and they are describing each tree using some cut & paste-fu...
@@ -82,7 +78,7 @@
 					
 				</section>
 
-				<section>
+				<section class="whatiscoding">
 					<section>
 						<h3>What is coding ?</h3>
 					</section>
@@ -153,7 +149,7 @@
 					
 				</section>
 				
-				<section>
+				<section class="variabletypes">
 					<section>
 						<h3>Wait... What are those float, integers, strings and booleans ?!</h3>
 					</section>
@@ -194,7 +190,7 @@
 					
 				</section>
 
-				<section>
+				<section class="createvariables">
 					<section>
 						<h3>Let's create some variables !</h3>
 					</section>
@@ -229,7 +225,7 @@
 					
 				</section>
 
-				<section>
+				<section class="variablesyntax">
 					<section>
 						<h3>Variable syntax & manipulation</h3>
 					</section>
@@ -321,7 +317,7 @@
 					
 				</section>
 
-				<section>
+				<section class="reusability">
 					<section>
 						<h3>Reusability</h3>
 					</section>
@@ -344,7 +340,7 @@
 					</section>					
 				</section>
 
-				<section>
+				<section class="wrangle1">
 					<section>
 						<h3>How to wrangle multiple variables</h3>
 						<h3>Part I</h3>
@@ -404,7 +400,7 @@
 					
 				</section>
 				
-				<section>
+				<section class="wrangle2">
 					<section>
 						<h3>How to wrangle multiple variables</h3>
 						<h3>Part II</h3>
@@ -463,7 +459,7 @@
 					</section>					
 				</section>
 
-				<section>
+				<section class="comparisons">
 					<section>
 						<h3>Comparisons & conditions</h3>
 					</section>
@@ -519,7 +515,7 @@ if (specificTree.isIndigenous) {
 					</section>
 				</section>
 
-				<section>
+				<section class="functions">
 					<section>
 						<h3>Encapsulating instructions in functions</h3>
 					</section>
@@ -554,7 +550,7 @@ const someOtherFunction = function(){
 	let a = 20;
 	let b = 30;
 
-	return a + b
+	return a + b;
 };
 
 // Calling the function
@@ -567,26 +563,176 @@ console.log(result)
 => 50
 						</code></pre>
 					</section>	
+					<section>
+						We can also ask the function to take a parameter
+						<pre><code>
+// Declaring the function
+const someOtherFunction = function(someParameter){
+	let a = 20;
+	let b = 30;
+
+	return a + b + someParameter;
+};
+
+// Calling the function & storing the return value in result
+let result = someOtherFunction(50);
+
+console.log(result)
+						</code></pre>
+						will output
+						<pre><code>
+=> 100
+						</code></pre>
+					</section>
+					<section>
+						<p>So how about our conditional statement ?</p>
+						<pre><code>
+let specificTree = {
+	amount: 1,
+	type: `oak`,
+	height:10.6,
+	age:45,
+	emoji:`🌳`,
+	isIndigenous:true
+};
+							</code></pre>
+						<p>To make the condition, we need to know the value of isIndigenous</p>
+						
+					</section>
+					<section>
+						<p>Why not give the entire object to the function ?</p>			
+						<pre><code>let specificTree = {
+	...
+};
+
+const isItIndigenous = function(treeObject) {
+	let isOrIsNot = "";
+	if (treeObject.isIndigenous) {
+		isOrIsNot = "is";
+	} else {
+		isOrIsNot = "is not";
+	}
+	return isOrIsNot
+}						</code></pre>							
+					</section>
+					<section>
+						Let's play with functions :
+						<iframe height="400px" width="100%" src="https://repl.it/@FrancisBourgoui/functiontesting?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
+					</section>
+					<section>
+						Now let's try to create a function that will output the entire entry
+						<iframe height="400px" width="100%" src="https://repl.it/@FrancisBourgoui/functiontestingv2?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
+					</section>
+					<section>
+						What if we could execute the function over & over ?
+					</section>
 				</section>
 
-				<section>
+
+				<section class="looping">
 					<section>
 						<h3>automate your life with loops !</h3>
 					</section>
 					<section>
-						Loops are very useful for two things
+						<p>With the function we made, we can output one entry</p>
+						<p>But we still need to execute the function once at a time</p>
+					</section>
+					<section>
+						<p>Loops are very useful for two things</p>
 						<ul>
 							<li>To repeat an instruction a lot of times</li>
 							<li>To repeat an instruction for a yet undefined amount of times</li>
 						</ul>
 					</section>
 					<section>
-						while
+						This is how a standard for loops looks and operate :
+						<pre><code>
+for (let iterator = 0; iterator < amountOfTimes; iterator++) {
+	// Do something
+}
+						</code></pre>
+						If we were to read that in plain english, it would sound like
+						<p>For the value of my iterator that starts at 0, as long as it's smaller than amountOfTimes, increment by one my iterator</p>
 					</section>
 					<section>
-						for
+						The condition can be anything, as long as it's not causing an infinite loop !
+						<pre><code>
+for (let iterator = 0; iterator < amountOfTimes; iterator++) {
+	// Do something
+}
+						</code></pre>
+						By using the .length method, we can know how many elements there is in an array !
+					</section>
+					<section>
+						Let's look at what it would look like with our previous work
+						<pre><code>let listOfTrees = [specificTree, anotherSpecificTree];
+
+const isItIndigenous = function(treeObject) {
+	//...
+	return isOrIsNot
+}
+const showEntry = function(treeObject) {
+	//...
+	console.log(textEntry)
+}
+for (let iterator = 0; iterator < listOfTrees.length; iterator++) {
+	showEntry(listOfTrees[iterator])
+}						</code></pre>
+					</section>
+					<section>
+						Let's see it in execution
+						<iframe height="400px" width="100%" src="https://repl.it/@FrancisBourgoui/forloopcomplete?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
+					</section>
+					<section>
+						We can now create a function containing our for loop, and we will be done !
+						<pre><code>let listOfTrees = [specificTree, anotherSpecificTree];
+const isItIndigenous = function(treeObject) {
+	//...
+	return isOrIsNot
+}
+const showEntry = function(treeObject) {
+	//...
+	console.log(textEntry)
+}
+const showAllEntries = function(listOfTrees){
+	for (let index = 0; index < listOfTrees.length; index++) {
+		showEntry(listOfTrees[iterator])
+	}
+}						</code></pre>
+					</section>
+				</section>
+				<section class="wrapup">
+						<section>
+							<h3>Wrap up</h3>
+						</section>
+						<section>
+							<p>The most important step</p>
+							<p>Assess & analyze the situation</p>
+						</section>
+						<section>
+							<p>Play with variables</p>
+							<p>Their types, functionalities and why we use them</p>
+						</section>
+						<section>
+							<p>Managing multiple variables</p>
+							<p>By playing with objects and arrays</p>
+						</section>
+						<section>
+							<p>Creating conditions</p>
+							<p>Looked at how to compare elements, and create conditions</p>
+						</section>
+						<section>
+							<p>Assembling instructions</p>
+							<p>By creating functions and using them</p>
+						</section>
+						<section>
+							<p>Automated tasks</p>
+							<p>By using the for loop and the basics of iteration</p>
+						</section>
 					</section>
 					
+				<section>
+					<h3>🎉🎉 Congratulations ! 🎉🎉</h3>
 				</section>
 			</div>
 		</div>
@@ -608,5 +754,19 @@ console.log(result)
 				]
 			});
 		</script>
+<img id="lhl-logo" src="img/lhl-logo_white.png">
+<section id="emoji_forest"></section>
+
+<script>
+	let elementsOfTheForest = ['🌳','🌴','🌲']
+	let stringOfTheForest = ""
+	for (let i = 0; i < 50; i++) {
+		let randomEmojiPosition = Math.floor(Math.random() * 3);
+		stringOfTheForest += `<span>${elementsOfTheForest[randomEmojiPosition]}</span>`
+	}
+	document.getElementById('emoji_forest').innerHTML = stringOfTheForest;
+</script>
+
+
 	</body>
 </html>

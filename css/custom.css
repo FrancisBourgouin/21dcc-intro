@@ -1,26 +1,17 @@
 /*
-* List CSS
+* General CSS
 */
 
-section ul li {
-    font-size:0.5em;
+body{
+    background-color:#135213;
 }
 
-.inverted {
-    filter:invert(1);
-    background:black;
+.reveal blockquote{
+    background:transparent;
+    box-shadow:none;
 }
-.isolate_variables ul{
-    display:flex;
-    flex-direction:column;
-    padding:0;
-    margin:0;
-}
-.isolate_variables ul li{
-    list-style-type: none;
-    padding:0;
-    margin:0;
-}
+
+
 .inline-code{
     display:flex;
     align-items: center;
@@ -34,14 +25,93 @@ section ul li {
 .reveal .inline-code pre code{
     background:transparent;
 }
-/*
-* 
-*/
 
-/*
-* 
-*/
+.situation,
+.whatiscoding,
+.isolate_variables,
+.variabletypes,
+.createvariables,
+.variablesyntax,
+.reusability,
+.wrangle1,
+.wrangle2,
+.comparisons,
+.functions,
+.looping,
+.wrapup{
 
-/*
-* 
-*/
+}
+
+.situation section:nth-of-type(3) p{
+    text-align:left;
+}
+
+.whatiscoding ul li{
+    font-size:0.5em
+}
+.isolate_variables ul{
+    display:flex;
+    flex-direction:column;
+    padding:0;
+    margin:1em;
+}
+.isolate_variables section:not(:nth-of-type(5)) ul li{
+    list-style-type: none;
+    padding:0;
+    margin:0.2em 0;
+    font-size:0.7em;
+    line-height:1.4em
+}
+.isolate_variables section:nth-of-type(5) p{
+    font-size:0.6em;
+    text-align:left;
+    display:inline-block;
+}
+.isolate_variables section:nth-of-type(5) ul li{
+    font-size:0.6em;
+}
+.inverted {
+    filter:invert(1);
+    background:black;
+    padding:0 0.1em;
+}
+.createvariables ul li {
+    font-size:0.55em;
+}
+.variablesyntax ul li{
+    font-size:0.75em;
+}
+
+
+body{
+    /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#b4ddb4+0,83c783+17,52b152+33,008a00+67,005700+83,002400+100;Green+3D+%231 */
+/* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#008a00+18,005700+60,045100+100&1+0,0.86+100 */
+background: -moz-linear-gradient(45deg,  rgba(0,138,0,1) 0%, rgba(0,138,0,0.97) 18%, rgba(0,87,0,0.91) 60%, rgba(4,81,0,0.86) 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(45deg,  rgba(0,138,0,1) 0%,rgba(0,138,0,0.97) 18%,rgba(0,87,0,0.91) 60%,rgba(4,81,0,0.86) 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(45deg,  rgba(0,138,0,1) 0%,rgba(0,138,0,0.97) 18%,rgba(0,87,0,0.91) 60%,rgba(4,81,0,0.86) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#008a00', endColorstr='#db045100',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+
+}
+
+section#emoji_forest {
+    position: fixed;
+    bottom: 1vh;
+    right:150px;
+    z-index: 990;
+    font-size: 40px;
+    display: flex;
+    opacity:0.6;
+}
+section#emoji_forest span:nth-of-type(2n){
+    transform:translateX(-10px)
+}
+section#emoji_forest span:nth-of-type(2n+1){
+   margin-left:-20px
+}
+
+#lhl-logo{
+    position:absolute;
+    top:2vh;
+    left:2vh;
+    z-index:999;
+}
