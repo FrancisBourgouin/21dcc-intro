@@ -18,7 +18,7 @@
 			var link = document.createElement( 'link' );
 			link.rel = 'stylesheet';
 			link.type = 'text/css';
-			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css': 'css/print/paper.css';
 			document.getElementsByTagName( 'head' )[0].appendChild( link );
 		</script>
 	</head>
@@ -26,31 +26,35 @@
 		<div class="reveal">
 			<div class="slides">
 				<section>
-					<h2>21 Day Coding Challenge</h2>
-					<h3>Intro workshop</h3>
+					<h3>JavaScript Basics Workshop</h3>
 				</section>
 
 				<section>
-					<h3>Today's order of lecture</h3>
+					<h3>Agenda</h3>
 					<ul>
-						<li class="fragment1">Some context to help the learning experience</li>
-						<li class="fragment1">What is programming ?</li>
+						<li class="fragment1">Some context to help the learning experience.</li>
+						<li class="fragment1">What is programming?</li>
 						<li class="fragment1">Approach a problem programaticaly.</li>
-						<li class="fragment1">What are variables ?</li>
+						<li class="fragment1">What are variables?</li>
 						<li class="fragment1">When and how to use loops.</li>
 						<li class="fragment1">Importance of conditionals.</li>
-						<li class="fragment1">What about functions ?</li>
+						<li class="fragment1">What about functions?</li>
 					</ul>
 					
 				</section>
 
 				<section>
+					<h2><pre><code>mentor@lighthouse:~/home/workshop$ whoami</code></pre></h2>
+					<h3></h3>
+				</section>
+
+				<section>
 					<section>
-						Having a situation to help us put in context what we are about to do always help, so we'll talk about...
+						Let’s look at a situation to better contextualize what we’ll be learning today. We’ll talk about...
 					</section>
 					<section>
 						<h1>🌳🌲🌴</h1>
-						<h1>Trees !</h1>
+						<h1>Trees!</h1>
 						<h1>🌴🌲🌳</h1>
 					</section>
 					
@@ -61,7 +65,7 @@
 						<h3>The situation</h3>
 					</section>
 					<section>
-						Let's say we have a friend that needs to account for every tree in Montréal, and they are describing each tree using some cut & paste-fu...
+						Let's say we have a friend that needs to account for every tree in Montréal, and they are describing each tree using some repetitive copy and pasting...
 					</section>
 					<section>
 						<p>1 oak tree that measures 10.6 meters, 45 years old. The tree looks like 🌳 and is indigenous to Canada.</p>
@@ -70,7 +74,7 @@
 						<p>And so on...</p>						
 					</section>
 					<section>
-						Pretty boring no ?
+						Pretty boring no?
 					</section>
 					<section>
 						<p>Since all entries are and will look the same, it's possible for us to approach the problem in a programatical way.</p>
@@ -80,32 +84,36 @@
 
 				<section class="whatiscoding">
 					<section>
-						<h3>What is coding ?</h3>
+						<h3>What is coding?</h3>
 					</section>
 					<section>
 						<blockquote>The art of breaking a problem down into steps so simple even a computer can do it.</blockquote>
 					</section>
 					<section>
 						<p>
-							What is JavaScript ?
+							What is JavaScript?
 						</p>
 						<p>
 							JavaScript is an interpreted language where either a browser or specific software, like Node.js, will execute.
 						</p>
 					</section>
 					<section>
-						Where does it come from ?
+						Where does it come from?
 						<ul>
-							<li>JavaScript is a language developped by Tim Berners-Lee in 1995, to add interactivity to the browser (Remember Netscape ?)</li>
+							<li>JavaScript is a language developed by Brendan Eich in 1995, to add interactivity to the browser. (Remember Netscape?)</li>
+							<li>Microsoft implemented a reverse-engineered version called JScript for Internet Explorer in 1996, which led to support issues between IE and other browsers.</li>
+							<li>A standardized version of JavaScript (ECMAScript) was officialized 1997.</li>
+							<li>In early 2009 ECMAScript 5 was adopted and disparities between browsers was officially over.</li>
+							<li>ECMAScript 2015, also known as ES6, is the version most widely used by everyone right now.</li>
 						</ul>
 					</section>
 					<section>
-						What does it looks like ?
-						Executing <pre><code>console.log("Hi there !");</code></pre>
-						Will output <pre><code>=> Hi there !</code></pre>
+						What does it looks like?
+						Executing <pre><code class="js">console.log("Hi there!");</code></pre>
+						Will output <pre><code class="js">=> Hi there!</code></pre>
 					</section>
 					<section>
-						So how do we use programming to help us with the current problem ?
+						So, how do we use programming to help us with the current problem?
 					</section>
 					
 				</section>
@@ -119,7 +127,7 @@
 						We know that every entry will look the same, let's isolate what will be different.
 					</section>
 					<section>
-						Let's find what's different :
+						Let's find what's different:
 						<ul>
 							<li>1 oak tree that measures 10.6 meters, 45 years old. The tree looks like 🌳 and is indigenous to Canada.</li>
 							<li>1 pine tree that measures 12.6 meters, 65 years old. The tree looks like 🌲 and is indigenous to Canada.</li>
@@ -127,7 +135,7 @@
 						</ul>
 					</section>
 					<section>
-						Highlighted, we see the isolated elements that are different :
+						Highlighted, we see the isolated elements that are different:
 						<ul>
 							<li><span class="inverted">1 oak</span> tree that measures <span class="inverted">10.6</span> meters, <span class="inverted">45</span> years old. The tree looks like <span class="inverted">🌳</span> and <span class="inverted">is</span> indigenous to Canada.</li>
 							<li><span class="inverted">1 pine</span> tree that measures <span class="inverted">12.6</span> meters, <span class="inverted">65</span> years old. The tree looks like <span class="inverted">🌲</span> and <span class="inverted">is</span> indigenous to Canada.</li>
@@ -135,14 +143,14 @@
 						</ul>
 					</section>
 					<section>
-						Let's look at what this line contains : 
+						Let's look at what this line contains: 
 						<p><span class="inverted">1 oak tree</span> that measures <span class="inverted">10.6</span> meters, <span class="inverted">45</span> years old. The tree looks like <span class="inverted">🌳</span> and <span class="inverted">is</span> indigenous to Canada.</p>
 						<ul>
-							<li>the number (integer) 1, representing the quantity during the observation</li>
-							<li>the name (string) oak, representing the type of tree</li>
-							<li>the number (float) 10.6, representing the height of the tree in meters</li>
-							<li>the number (integer) 45, representing the age of the tree</li>
-							<li>the emoji (string) 🌳, representing the look of the tree</li>
+							<li>the number (integer) 1, representing the quantity during the observation.</li>
+							<li>the name (string) oak, representing the type of tree.</li>
+							<li>the number (float) 10.6, representing the height of the tree in meters.</li>
+							<li>the number (integer) 45, representing the age of the tree.</li>
+							<li>the emoji (string) 🌳, representing the look of the tree.</li>
 							<li>the fact (boolean) is, representing the fact that it is indigenous to Canada.</li>
 						</ul>
 					</section>
@@ -151,76 +159,91 @@
 				
 				<section class="variabletypes">
 					<section>
-						<h3>Wait... What are those float, integers, strings and booleans ?!</h3>
+						<h3>Wait... What are those float, integers, strings and booleans?!</h3>
 					</section>
 					<section>
-						<p>In JavaScript we have data types, like float, integers, booleans, string and others.</p>
-						<p>Let's start with the basics of a string</p>
+						<p>In JavaScript we have data types like float, integer, booleans, strings and others.</p>
+						<p>Let's start with the basics of a string.</p>
 					</section>
 					<section>
-						Let's look at how one entry would look like in JavaScript
+						Let's look at how one entry would look like in JavaScript.
 						<iframe height="400px" width="100%" src="https://repl.it/@FrancisBourgoui/Initial-string?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
-						We can use quotes ('), double quotes (") or backticks (`) to specify that what is coming is a string
+						We can use quotes ('), double quotes (") or backticks (`) to specify that what is coming is a string.
 					</section>
 					<section>
-						<p>We can also store that string so we can ;</p>
+						<p>We can also store that string so we can:</p>
 						<ul>
-							<li>manipulate it</li>
-							<li>copy it</li>
-							<li>or reference to it at a later date</li>
+							<li>Manipulate it</li>
+							<li>Copy it</li>
+							<li>Or reference to it at a later date</li>
 						</ul>
 					</section>
 					<section>
-						<p>It will look like this :</p>
-						<pre><code>let specificEntry = `1 oak tree that measures 10.6 meters...`</code></pre> 
+						<p>It will look like this:</p>
+						<pre><code class="js">let specificEntry = `1 oak tree that measures 10.6 meters...`</code></pre> 
 						<ul>
-							<li>We use the keyword let to declare a variable</li>
-							<li>We name it, in this case specificEntry</li>
-							<li>Using the equality sign, we assign the string to it</li>
+							<li>We use the keyword let to declare a variable.</li>
+							<li>You may see variable declarations with const and var.</li>
 						</ul>
 					</section>
 					<section>
-						<p>Executing it will be like this : </p>
+						<p>It will look like this:</p>
+						<pre><code class="js">let specificEntry = `1 oak tree that measures 10.6 meters...`</code></pre> 
+						<ul>
+							<li>We name it, in this case specificEntry.</li>
+							<li>This way of writing is called camelCase, which is a common way of writing variables names in JS.</li>
+						</ul>
+					</section>
+					<section>
+						<p>It will look like this:</p>
+						<pre><code class="js">let specificEntry = `1 oak tree that measures 10.6 meters...`</code></pre> 
+						<ul>
+							<li>Using the equality sign, we assign the string to it.</li>
+							<li>An equal sign in JavaScript means assignement, not comparison!</li>
+						</ul>
+					</section>
+					<section>
+						<p>Executing it will be like this: </p>
 						<iframe height="400px" width="100%" src="https://repl.it/@FrancisBourgoui/String-with-var?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>			
-						<p>Note that each instruction should end with a semicolon</p>		
+						<p>Note that each instruction should end with a semicolon.</p>		
 					</section>
 					<section>
-						Great !
+						Great!
 					</section>
 					
 				</section>
 
 				<section class="createvariables">
 					<section>
-						<h3>Let's create some variables !</h3>
+						<h3>Let's create some variables!</h3>
 					</section>
 					<section>
-						<p>Based on what we had in the entry :</p>
+						<p>Based on what we had in the entry:</p>
 						<ul>
-							<li>the number (integer) 1, representing the quantity during the observation</li>
-							<li>the name (string) oak, representing the type of tree</li>
-							<li>the number (float) 10.6, representing the height of the tree in meters</li>
-							<li>the number (integer) 45, representing the age of the tree</li>
-							<li>the emoji (string) 🌳, representing the look of the tree</li>
+							<li>the number (integer) 1, representing the quantity during the observation.</li>
+							<li>the name (string) oak, representing the type of tree.</li>
+							<li>the number (float) 10.6, representing the height of the tree in meters.</li>
+							<li>the number (integer) 45, representing the age of the tree.</li>
+							<li>the emoji (string) 🌳, representing the look of the tree.</li>
 							<li>the fact (boolean) is, representing the fact that it is indigenous to Canada.</li>
 						</ul>
 					</section>
 					<section>
-						<p>In a variable form :</p>
+						<p>In a variable form:</p>
 						<ul>
-							<li class="inline-code"><pre><code>let treeAmount = 1</code></pre>, representing the quantity during the observation</li>
-							<li class="inline-code"><pre><code>let treeType = `oak`</code></pre>, representing the type of tree</li>
-							<li class="inline-code"><pre><code>let treeHeight = 10.6</code></pre>, representing the height of the tree in meters</li>
-							<li class="inline-code"><pre><code>let treeAge = 45</code></pre>, representing the age of the tree</li>
-							<li class="inline-code"><pre><code>let treeEmoji = `🌳`</code></pre>, representing the look of the tree</li>
-							<li class="inline-code"><pre><code>let treeIsIndigenous = true</code></pre>, representing the fact that it is indigenous to Canada.</li>
+							<li class="inline-code"><pre><code class="js">let treeAmount = 1</code></pre>, representing the quantity during the observation.</li>
+							<li class="inline-code"><pre><code class="js">let treeType = `oak`</code></pre>, representing the type of tree.</li>
+							<li class="inline-code"><pre><code class="js">let treeHeight = 10.6</code></pre>, representing the height of the tree in meters.</li>
+							<li class="inline-code"><pre><code class="js">let treeAge = 45</code></pre>, representing the age of the tree.</li>
+							<li class="inline-code"><pre><code class="js">let treeEmoji = `🌳`</code></pre>, representing the look of the tree.</li>
+							<li class="inline-code"><pre><code class="js">let treeIsIndigenous = true</code></pre>, representing the fact that it is indigenous to Canada.</li>
 						</ul>
 						<aside class="notes">
 							Talk about what each variable type can contain
 						</aside>
 					</section>
 					<section>
-						So now that we have a string variable for the entry and multiple variables for our changing elements, can we merge thoses ?
+						So, now that we have a string variable for the entry and multiple variables for our changing elements, can we merge those?
 					</section>
 					
 				</section>
@@ -230,33 +253,33 @@
 						<h3>Variable syntax & manipulation</h3>
 					</section>
 					<section>
-						Before going further with our entries, let's look at what we can do with variables
+						Before going further with our entries, let's look at what we can do with variables.
 					</section>
 					<section>
-						<p>We have two different kinds of numbers :</p>
+						<p>We have two different kinds of numbers:</p>
 						<ul>
 							<li>Integers, also known as round numbers, like ...,-1,0,1,2,3... </li>
 							<li>Floats, numbers that have a decimal point, like 3.14, -6.28</li>
 						</ul>
-						<p>No need for quotes around numbers !</p>
+						<p>No need for quotes around numbers!</p>
 					</section>
 					<section>
-						<p>For numbers, we can :</p>
+						<p>For numbers, we can:</p>
 						<ul>
-							<li>Add : 1 + 1</li>
-							<li>Substract : 1 - 1</li>
-							<li>Multiply : 1 * 1</li>
-							<li>Divide : 1 / 1</li>
-							<li>And more !</li>
+							<li>Add: 1 + 1</li>
+							<li>Substract: 1 - 1</li>
+							<li>Multiply: 1 * 1</li>
+							<li>Divide: 1 / 1</li>
+							<li>And more!</li>
 						</ul>	
 					</section>
 					<section>
-						<p>We assign numbers to variables like this :</p>
-						<pre><code>let someRoundNumber = 437;</code></pre>
-						<pre><code>let someFloatNumber = 3.1415926535;</code></pre>
+						<p>We assign numbers to variables like this:</p>
+						<pre><code class="js">let someRoundNumber = 437;</code></pre>
+						<pre><code class="js">let someFloatNumber = 3.1415926535;</code></pre>
 					</section>	
 					<section>
-						<p>We can put whatever we want in strings :</p>
+						<p>We can put whatever we want in strings:</p>
 						<ul>
 							<li>Letters, words & sentences, like 'j', 'Hello' & 'Hey buddy!'</li>
 							<li>Numbers, like '1234', '2.718', '1 4 6 7'</li>
@@ -264,55 +287,55 @@
 						</ul>							
 					</section>
 					<section>
-						<h3>WARNING !</h3>
-						<p>As long as there are quotes, doublequotes or backticks, it will be considered to be a string !</p>
+						<h3>WARNING!</h3>
+						<p>As long as there are quotes, doublequotes or backticks, it will be considered a string!</p>
 					</section>
 					<section>
 						<p>Since strings are not numbers, we can't use substract, divide or multiply operations directly.</p>	
 					</section>
 					<section>
-						<p>However, we can add strings together, also known as concatenation</p>
-						<pre><code>"Hello" + "There"</code></pre>
-						<pre><code>=> "HelloThere"</code></pre>
+						<p>However, we can add strings together, also known as concatenation.</p>
+						<pre><code class="js">"Hello" + "There"</code></pre>
+						<pre><code class="js">=> "HelloThere"</code></pre>
 
 					</section>
 					<section>
-						We assign strings to variables like this :
-						<pre><code>let salutation = 'Hello !';</code></pre>
-						<pre><code>let someStringWithNumbers = '3.1415926535'; //this is a string now</code></pre> 
-						<pre><code>let someStringWithDoubleQuotes = "Hey !";</code></pre>
-						<pre><code>let someStringWithBackticks = `Good morning !`;</code></pre>
+						We assign strings to variables like this:
+						<pre><code class="js">let salutation = 'Hello!';</code></pre>
+						<pre><code class="js">let someStringWithNumbers = '3.1415926535'; //this is a string now</code></pre> 
+						<pre><code class="js">let someStringWithDoubleQuotes = "Hey!";</code></pre>
+						<pre><code class="js">let someStringWithBackticks = `Good morning!`;</code></pre>
 					</section>						
 					<section>
-						With the newer syntax of JavaScript and backticks we can insert the value of a variable directly inside a string !
+						With the newer syntax of JavaScript and backticks, we can insert the value of a variable directly inside a string!
 					</section>
 					<section>
-							Using the newer syntax of JavaScript : 
+							Using the newer syntax of JavaScript: 
 
-						<pre><code>let name = 'Francis';</code></pre>
-						<pre><code>let personalizedSalutation = `Hi ${name}!`;</code></pre>
-							Instead of the older way :
-						<pre><code>let name = 'Francis';</code></pre>
-						<pre><code>let personalizedSalutation = 'Hello ' + name + '!';</code></pre>
+						<pre><code class="js">let name = 'Francis';</code></pre>
+						<pre><code class="js">let personalizedSalutation = `Hi ${name}!`;</code></pre>
+							Instead of the older way:
+						<pre><code class="js">let name = 'Francis';</code></pre>
+						<pre><code class="js">let personalizedSalutation = 'Hello ' + name + '!';</code></pre>
 					</section>
 					<section>
-						Let's have a look at our entry, in a JavaScript way :
+						Let's have a look at our entry, in a JavaScript way:
 					</section>
 					<section>
-						<pre><code>let treeAmount = 1;</code></pre>
-						<pre><code>let treeType = `oak`;</code></pre>
-						<pre><code>let treeHeight = 10.6;</code></pre>
-						<pre><code>let treeAge = 45;</code></pre>
-						<pre><code>let treeEmoji = `🌳`;</code></pre>
-						<pre><code>let treeIsIndigenous = true;</code></pre>
-						<pre><code>let specificEntry = `${treeAmount} ${treeType} tree that measures ${treeHeight} meters, ${treeAge} years old. The tree looks like ${treeEmoji} and ${treeIsIndigenous} indigenous to Canada.</code><pre>
+						<pre><code class="js">let treeAmount = 1;</code></pre>
+						<pre><code class="js">let treeType = `oak`;</code></pre>
+						<pre><code class="js">let treeHeight = 10.6;</code></pre>
+						<pre><code class="js">let treeAge = 45;</code></pre>
+						<pre><code class="js">let treeEmoji = `🌳`;</code></pre>
+						<pre><code class="js">let treeIsIndigenous = true;</code></pre>
+						<pre><code class="js">let specificEntry = `${treeAmount} ${treeType} tree that measures ${treeHeight} meters, ${treeAge} years old. The tree looks like ${treeEmoji} and ${treeIsIndigenous} indigenous to Canada.</code><pre>
 					</section>
 					<section>
-						Let's see the output :
+						Let's see the output:
 						<iframe height="400px" width="100%" src="https://repl.it/@FrancisBourgoui/Listofvariablesforoneentry?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
 					</section>
 					<section>
-						Why did we make our entry variable more complicated than before ?
+						Why did we make our entry variable more complicated than before?
 					</section>
 					
 				</section>
@@ -322,11 +345,11 @@
 						<h3>Reusability</h3>
 					</section>
 					<section>
-						We can now change the values outside the strings :
+						We can now change the values outside the strings:
 						<iframe height="400px" width="100%" src="https://repl.it/@FrancisBourgoui/Listofvariablesforoneentry?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
 					</section>
 					<section>
-						We can also change the names of variables :
+						We can also change the names of variables:
 						<iframe height="400px" width="100%" src="https://repl.it/@FrancisBourgoui/Listofvariablesforoneentryv2?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
 					</section>
 					<section>
@@ -346,31 +369,32 @@
 						<h3>Part I</h3>
 					</section>
 					<section>
-						All of our variables are needed for one tree :
-						<pre><code>let treeAmount = 1;</code></pre>
-						<pre><code>let treeType = `oak`;</code></pre>
-						<pre><code>let treeHeight = 10.6;</code></pre>
-						<pre><code>let treeAge = 45;</code></pre>
-						<pre><code>let treeEmoji = `🌳`;</code></pre>
-						<pre><code>let treeIsIndigenous = true;</code></pre>
+						All of our variables are needed for one tree:
+						<pre><code class="js">let treeAmount = 1;</code></pre>
+						<pre><code class="js">let treeType = `oak`;</code></pre>
+						<pre><code class="js">let treeHeight = 10.6;</code></pre>
+						<pre><code class="js">let treeAge = 45;</code></pre>
+						<pre><code class="js">let treeEmoji = `🌳`;</code></pre>
+						<pre><code class="js">let treeIsIndigenous = true;</code></pre>
 					</section>
 					<section>
 						If only there was a way to create a variable containing multiple properties...
 					</section>
 					<section>
-						<h3>Objects !</h3>
+						<h3>Objects!</h3>
 					</section>
 					<section>
 						<p>Objects are a type of variable that are a little bit more special.</p>
-						<p>They contain data with a key:value pairing system</p>
+						<p>They contain data with a key:value pairing system.</p>
 					</section>
 					<section>
-						Like this :
-						<pre><code>let someObject = {key:value, coolness:9001, color:"blue"}</code></pre>
+						In this object, we have the keys 'key', 'coolness' and 'color'.
+						<pre><code class="js">let someObject = {key:value, coolness:9001, color:"blue"}</code></pre>
+						'value', '9001' and 'blue' are the values associated to those keys.
 					</section>
 					<section>
-						We could then create an object containing all of the properties of one tree :
-<pre><code>let specificTree = {
+						We could then create an object containing all of the properties of one tree:
+<pre><code class="js">let specificTree = {
   amount: 1,
   type: `oak`,
   height:10.6,
@@ -381,14 +405,14 @@
 </code></pre>
 					</section>
 					<section>
-						We access the data inside an object using this notation :
-						Name of the object, name of the property, separated by a dot
-						<pre><code>specificTree.amount</code></pre>
-						Name of the object, name of the property in square brackets
-						<pre><code>specificTree[`amount`]</code></pre>
+						We access the data inside an object using this notation:
+						Name of the object, name of the property, separated by a dot.
+						<pre><code class="js">specificTree.amount</code></pre>
+						Name of the object, name of the property in square brackets.
+						<pre><code class="js">specificTree[`amount`]</code></pre>
 					</section>
 					<section>
-						Let's look at an updated version of our script :
+						Let's look at an updated version of our script:
 						<iframe height="400px" width="100%" src="https://repl.it/@FrancisBourgoui/Listofvariablesforoneentryv3?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
 					</section>
 					<section>
@@ -406,25 +430,27 @@
 						<h3>Part II</h3>
 					</section>
 					<section>
-						Would it be possible to make an object containing all of our tree objects ?
+						Would it be possible to make an object containing all of our tree objects?
 					</section>
 					<section>
 						It would be, but there is something better to group independent elements.
 					</section>
 					<section>
-						<h3>arrays !</h3>
+						<h3>arrays!</h3>
 					</section>
 					<section>
 						<p>Arrays are a type of variable that are a little bit special too.</p>
 						<p>They contain data with a index:value pairing system</p>
 					</section>
 					<section>
-							Like this :
-							<pre><code>let someArray = [1234, 'hello', name, true]</code></pre>
+							In this array, the string 'hello' is it's second element.
+							<pre><code class="js">let someArray = [1234, 'hello', name, true]</code></pre>
+							It's important to know that indexes in arrays starts at 0. What is the index of 'hello'?
 						</section>
+						
 					<section>
-						Considering those two objects, we could add them to an array
-<pre><code>let specificTree = {
+						Let's add two of our objects to an array.
+<pre><code class="js">let specificTree = {
 	amount: 1,
 	type: `oak`,
 	height:10.6,
@@ -433,7 +459,7 @@
 	isIndigenous:true
 };
 </code></pre>
-<pre><code>let anotherSpecificTree = {
+<pre><code class="js">let anotherSpecificTree = {
 	amount: 1,
 	type: `maple`,
 	height:4.6,
@@ -442,16 +468,16 @@
 	isIndigenous:true
 };
 </code></pre>
-						<pre><code>let listOfTrees = [specificTree, anotherSpecificTree];</code></pre>
+						<pre><code class="js">let listOfTrees = [specificTree, anotherSpecificTree];</code></pre>
 
 					</section>
 					<section>
-						We access the data inside an array using the name of the object, index in square brackets
-						<pre><code>listOfTrees[0]</code></pre>
-						Don't forget that indexes starts at 0, not 1 !
+						We access the data inside an array using the name of the object, index in square brackets.
+						<pre><code class="js">listOfTrees[0]</code></pre>
+						Don't forget that indexes starts at 0, not 1!
 					</section>
 					<section>
-						Let's play with those objects in the array : 
+						Let's play with those objects in the array: 
 						<iframe height="400px" width="100%" src="https://repl.it/@FrancisBourgoui/arraysandobjects?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
 					</section>
 					<section>
@@ -464,38 +490,38 @@
 						<h3>Comparisons & conditions</h3>
 					</section>
 					<section>
-						For the eagle-eyed, you saw that in an entry we have a small problem
-						<pre><code>"...and true indigenous to Canada."</code></pre>
-						Should be 'is indigenous', not 'true indigenous'
+						For the eagle-eyed, you saw that in an entry we have a small problem.
+						<pre><code class="js">"...and true indigenous to Canada."</code></pre>
+						Should be 'is indigenous', not 'true indigenous'.
 					</section>
 					<section>
-						That is because the data type for our indigenous variable is a boolean
+						That is because the data type for our indigenous variable is a boolean.
 					</section>
 					<section>
-						A boolean variable has either true, or false as a value like this :
-						<pre><code>let beTrue = true;</code></pre>
-						<pre><code>let beFalse = false;</code></pre>
+						A boolean variable has either true, or false as a value like this:
+						<pre><code class="js">let beTrue = true;</code></pre>
+						<pre><code class="js">let beFalse = false;</code></pre>
 					</section>
 					<section>
-						<p>We can assign a boolean value to variable</p>
-						<p>We can also get a boolean out of a comparison between values</p>
+						<p>We can assign a boolean value to a variable.</p>
+						<p>We can also get a boolean out of a comparison between values.</p>
 					</section>
 					<section>
-						We can compare using :
-						<pre><code>1 === 1   // True, Equal & identic</code></pre>
-						<pre><code>1 == '1'  // True, Equivalent</code></pre>
-						<pre><code>1 !== '1' // True, Equivalent value, but different type</code></pre>
-						<pre><code>1 != '1'  // False, Equivalent</code></pre>
-						<pre><code>1 > 10    // False, 1 is not bigger, also >= for bigger or equals</code></pre>
-						<pre><code>5 < 6     // True, 5 is smaller, also <= for smaller or equals</code></pre>
+						We can compare using:
+						<pre><code class="js">1 === 1   // True, Equal & identic</code></pre>
+						<pre><code class="js">1 == '1'  // True, Equivalent</code></pre>
+						<pre><code class="js">1 !== '1' // True, Equivalent value, but different type</code></pre>
+						<pre><code class="js">1 != '1'  // False, Equivalent</code></pre>
+						<pre><code class="js">1 > 10    // False, 1 is not bigger, also >= for bigger or equals</code></pre>
+						<pre><code class="js">5 < 6     // True, 5 is smaller, also <= for smaller or equals</code></pre>
 					</section>
 					<section>
-						Since we can now compare, it means we can make conditions
-						if the tree is indigenous to Canada, return the string 'is', if not, return 'is not'
+						Since we can now compare, it means we can make conditions.
+						"If the tree is indigenous to Canada, return the string 'is', if no, return 'is not'".
 					</section>
 					<section>
-						In code form :
-						<pre><code>
+						In code form:
+						<pre><code class="js">
 let isOrIsNot = "";
 if (specificTree.isIndigenous) {
 	isOrIsNot = "is";
@@ -507,11 +533,11 @@ if (specificTree.isIndigenous) {
 
 					</section>
 					<section>
-						Let's play with it a little bit :
+						Let's play with it a little bit:
 						<iframe height="400px" width="100%" src="https://repl.it/@FrancisBourgoui/ifstatement?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
 					</section>
 					<section>
-						What if we don't want to write a conditional statement for each tree ?
+						What if we don't want to write a conditional statement for each tree?
 					</section>
 				</section>
 
@@ -520,31 +546,31 @@ if (specificTree.isIndigenous) {
 						<h3>Encapsulating instructions in functions</h3>
 					</section>
 					<section>
-						Our previous conditional statement wasn't that long, but again, we will need to write over and over.
+						Our previous conditional statement wasn't that long, but again, we will need to write it over and over.
 					</section>
 					<section>
-						With functions, we can execute multiple operations 
-						<pre><code>
+						With functions, we can execute multiple operations:
+						<pre><code class="js">
 // Declaring the function
 const someFunction = function(){
-	console.log("Hey !");
-	console.log("Ho !");
-	console.log("Let's go !");
+	console.log("Hey!");
+	console.log("Ho!");
+	console.log("Let's go!");
 };
 
 // Calling the function
 someFunction();
 						</code></pre>
-					will output
-						<pre><code>
-=> Hey !
-=> Ho !
-=> Let's go !
+					will output:
+						<pre><code class="js">
+=> Hey!
+=> Ho!
+=> Let's go!
 						</code></pre>					
 					</section>
 					<section>
-						We can also ask the function to return a value
-						<pre><code>
+						We can also ask the function to return a value:
+						<pre><code class="js">
 // Declaring the function
 const someOtherFunction = function(){
 	let a = 20;
@@ -558,14 +584,14 @@ let result = someOtherFunction();
 
 console.log(result)
 						</code></pre>
-					will output
-						<pre><code>
+					will output:
+						<pre><code class="js">
 => 50
 						</code></pre>
 					</section>	
 					<section>
-						We can also ask the function to take a parameter
-						<pre><code>
+						We can also ask the function to take a parameter:
+						<pre><code class="js">
 // Declaring the function
 const someOtherFunction = function(someParameter){
 	let a = 20;
@@ -579,14 +605,14 @@ let result = someOtherFunction(50);
 
 console.log(result)
 						</code></pre>
-						will output
-						<pre><code>
+						will output:
+						<pre><code class="js">
 => 100
 						</code></pre>
 					</section>
 					<section>
-						<p>So how about our conditional statement ?</p>
-						<pre><code>
+						<p>So how about our conditional statement?</p>
+						<pre><code class="js">
 let specificTree = {
 	amount: 1,
 	type: `oak`,
@@ -596,12 +622,12 @@ let specificTree = {
 	isIndigenous:true
 };
 							</code></pre>
-						<p>To make the condition, we need to know the value of isIndigenous</p>
+						<p>To make the condition, we need to know the value of isIndigenous.</p>
 						
 					</section>
 					<section>
-						<p>Why not give the entire object to the function ?</p>			
-						<pre><code>let specificTree = {
+						<p>Why not give the entire object to the function?</p>			
+						<pre><code class="js">let specificTree = {
 	...
 };
 
@@ -616,7 +642,7 @@ const isItIndigenous = function(treeObject) {
 }						</code></pre>							
 					</section>
 					<section>
-						Let's play with functions :
+						Let's play with functions:
 						<iframe height="400px" width="100%" src="https://repl.it/@FrancisBourgoui/functiontesting?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
 					</section>
 					<section>
@@ -624,48 +650,48 @@ const isItIndigenous = function(treeObject) {
 						<iframe height="400px" width="100%" src="https://repl.it/@FrancisBourgoui/functiontestingv2?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
 					</section>
 					<section>
-						What if we could execute the function over & over ?
+						What if we could execute the function over and over?
 					</section>
 				</section>
 
 
 				<section class="looping">
 					<section>
-						<h3>automate your life with loops !</h3>
+						<h3>automate your life with loops!</h3>
 					</section>
 					<section>
-						<p>With the function we made, we can output one entry</p>
-						<p>But we still need to execute the function once at a time</p>
+						<p>With the function we made, we can output one entry.</p>
+						<p>But we still need to execute the function one at a time.</p>
 					</section>
 					<section>
-						<p>Loops are very useful for two things</p>
+						<p>Loops are very useful for two things:</p>
 						<ul>
-							<li>To repeat an instruction a lot of times</li>
-							<li>To repeat an instruction for a yet undefined amount of times</li>
+							<li>To repeat an instruction a lot of times.</li>
+							<li>To repeat an instruction for a yet undefined amount of times.</li>
 						</ul>
 					</section>
 					<section>
-						This is how a standard for loops looks and operate :
-						<pre><code>
+						This is how a standard for loop looks and operate:
+						<pre><code class="js">
 for (let iterator = 0; iterator < amountOfTimes; iterator++) {
 	// Do something
 }
 						</code></pre>
-						If we were to read that in plain english, it would sound like
-						<p>For the value of my iterator that starts at 0, as long as it's smaller than amountOfTimes, increment by one my iterator</p>
+						If we were to read that in plain english, it would be like:
+						<p>"For the value of my iterator that starts at 0, as long as it's smaller than amountOfTimes, increment by one my iterator"</p>
 					</section>
 					<section>
-						The condition can be anything, as long as it's not causing an infinite loop !
-						<pre><code>
+						The condition can be anything, as long as it's not causing an infinite loop!
+						<pre><code class="js">
 for (let iterator = 0; iterator < amountOfTimes; iterator++) {
 	// Do something
 }
 						</code></pre>
-						By using the .length method, we can know how many elements there is in an array !
+						By using the .length method, we can know how many elements there is in an array!
 					</section>
 					<section>
-						Let's look at what it would look like with our previous work
-						<pre><code>let listOfTrees = [specificTree, anotherSpecificTree];
+						Let's look at what it would look like with our previous work:
+						<pre><code class="js">let listOfTrees = [specificTree, anotherSpecificTree];
 
 const isItIndigenous = function(treeObject) {
 	//...
@@ -680,12 +706,12 @@ for (let iterator = 0; iterator < listOfTrees.length; iterator++) {
 }						</code></pre>
 					</section>
 					<section>
-						Let's see it in execution
+						Let's see it in execution:
 						<iframe height="400px" width="100%" src="https://repl.it/@FrancisBourgoui/forloopcomplete?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
 					</section>
 					<section>
-						We can now create a function containing our for loop, and we will be done !
-						<pre><code>let listOfTrees = [specificTree, anotherSpecificTree];
+						We can now create a function containing our for loop, and we will be done!
+						<pre><code class="js">let listOfTrees = [specificTree, anotherSpecificTree];
 const isItIndigenous = function(treeObject) {
 	//...
 	return isOrIsNot
@@ -706,33 +732,31 @@ const showAllEntries = function(listOfTrees){
 							<h3>Wrap up</h3>
 						</section>
 						<section>
-							<p>The most important step</p>
-							<p>Assess & analyze the situation</p>
+							<p>The most important step is always assess & analyze the situation.</p>
 						</section>
 						<section>
-							<p>Play with variables</p>
+							<p>Play with variables:</p>
 							<p>Their types, functionalities and why we use them</p>
 						</section>
 						<section>
-							<p>Managing multiple variables</p>
-							<p>By playing with objects and arrays</p>
+							Manage multiple variables by playing with objects and arrays.
 						</section>
 						<section>
-							<p>Creating conditions</p>
-							<p>Looked at how to compare elements, and create conditions</p>
+							The most important step is always assess & analyze the situation.
 						</section>
 						<section>
-							<p>Assembling instructions</p>
-							<p>By creating functions and using them</p>
+							Assembled instructions by creating functions and using them.
 						</section>
 						<section>
-							<p>Automated tasks</p>
-							<p>By using the for loop and the basics of iteration</p>
+							Automated tasks by using the for loop and the basics of iteration.
 						</section>
 					</section>
-					
+				
+					<section>
+						<h3>🤔🤔 Questions? 🤔🤔</h3>
+					</section>
 				<section>
-					<h3>🎉🎉 Congratulations ! 🎉🎉</h3>
+					<h3>🎉🎉 Congratulations! 🎉🎉</h3>
 				</section>
 			</div>
 		</div>
