@@ -34,7 +34,7 @@
 					<ul>
 						<li class="fragment1">Some context to help the learning experience.</li>
 						<li class="fragment1">What is programming?</li>
-						<li class="fragment1">Approach a problem programaticaly.</li>
+						<li class="fragment1">Approach a problem programmaticaly.</li>
 						<li class="fragment1">What are variables?</li>
 						<li class="fragment1">When and how to use loops.</li>
 						<li class="fragment1">Importance of conditionals.</li>
@@ -77,7 +77,7 @@
 						Pretty boring no?
 					</section>
 					<section>
-						<p>Since all entries are and will look the same, it's possible for us to approach the problem in a programatical way.</p>
+						<p>Since all entries are and will look the same, it's possible for us to approach the problem in a programmatical way.</p>
 					</section>
 					
 				</section>
@@ -283,7 +283,6 @@
 						<ul>
 							<li>Letters, words & sentences, like 'j', 'Hello' & 'Hey buddy!'</li>
 							<li>Numbers, like '1234', '2.718', '1 4 6 7'</li>
-							<li>Emojis, like '😎', '🤦‍', '🤷‍'</li>
 						</ul>							
 					</section>
 					<section>
@@ -748,6 +747,7 @@ const showAllEntries = function(listOfTrees){
 				</section>
 			</div>
 		</div>
+		<img id="lhl-logo" src="img/lhl-logo_white.png">
 
 		<script src="js/reveal.js"></script>
 
@@ -763,20 +763,27 @@ const showAllEntries = function(listOfTrees){
 					{ src: 'plugin/highlight/highlight.js', async: true },
 					{ src: 'socket.io/socket.io.js', async: true },
 					{ src: 'plugin/notes-server/client.js', async: true }
-				]
+				],
+				width:960,
+				height:900
 			});
+
+			// Reveal.addEventListener( 'ready', function( event ) {
+			// 	// event.currentSlide, event.indexh, event.indexv
+			// 	let optimalWidth = (window.innerWidth - document.querySelector('.slides').innerWidth) / 2
+			// 	document.getElementById('lhl-logo').style.width = `${optimalWidth}px`
+			// } );
 		</script>
-<img id="lhl-logo" src="img/lhl-logo_white.png">
 <section id="emoji_forest"></section>
 
 <script>
-	let elementsOfTheForest = ['🌳','🌴','🌲']
-	let stringOfTheForest = ""
-	for (let i = 0; i < 50; i++) {
-		let randomEmojiPosition = Math.floor(Math.random() * 3);
-		stringOfTheForest += `<span>${elementsOfTheForest[randomEmojiPosition]}</span>`
-	}
-	document.getElementById('emoji_forest').innerHTML = stringOfTheForest;
+	// let elementsOfTheForest = ['🌳','🌴','🌲']
+	// let stringOfTheForest = ""
+	// for (let i = 0; i < 50; i++) {
+	// 	let randomEmojiPosition = Math.floor(Math.random() * 3);
+	// 	stringOfTheForest += `<span>${elementsOfTheForest[randomEmojiPosition]}</span>`
+	// }
+	// document.getElementById('emoji_forest').innerHTML = stringOfTheForest;
 </script>
 
 

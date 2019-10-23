@@ -114,4 +114,6 @@ section#emoji_forest span:nth-of-type(2n+1){
     top:2vh;
     left:2vh;
     z-index:999;
+    width:calc((100% - 960px)/2);
+    height:auto;
 }
